@@ -61,12 +61,6 @@ M.coc = {
       'coc-pairs',
       'coc-json',
       'coc-highlight',
-
-      'coc-tsserver',
-      'coc-css',
-      'coc-html',
-      'coc-eslint',
-      'coc-sumneko-lua',
     }
     vim.g.coc_list_preview_filetype = true
 
