@@ -63,7 +63,7 @@ if utils.is_win() then
   vim.api.nvim_exec('language en_US', true)
   opt.ff = 'unix'
 else
-  opt.shell = 'zsh'
+  opt.shell = 'bash'
 end
 
 opt.foldcolumn = '1'
