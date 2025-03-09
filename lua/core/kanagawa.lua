@@ -2,6 +2,7 @@
 local P = {
   -- NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.
   'rebelot/kanagawa.nvim',
+  enabled = false,
   opts = {
     theme = 'wave',
     undercurl = true,

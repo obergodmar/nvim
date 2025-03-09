@@ -1,0 +1,5 @@
+{
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.workspace.library": ["${3rd}/luv/library", "~/AppData/Local/nvim-data"],
+  "Lua.workspace.checkThirdParty": "Disable"
+}
