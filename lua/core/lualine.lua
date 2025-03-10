@@ -44,6 +44,7 @@ local P = {
       icons_enabled = true,
       component_separators = '|',
       section_separators = '',
+      theme = 'catppuccin',
     },
     sections = {
       lualine_a = { 'mode' },

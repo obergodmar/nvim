@@ -255,6 +255,9 @@ local dependencies = {
     opts = {
       notification = {
         override_vim_notify = true,
+        window = {
+          winblend = 0,
+        },
       },
       progress = {
         suppress_on_insert = true,
