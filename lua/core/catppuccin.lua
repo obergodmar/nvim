@@ -34,6 +34,7 @@ local P = {
           return {
             ['@lsp.type.const'] = { fg = colors.peach },
             ['@tag.builtin.tsx'] = { fg = colors.blue },
+            ['@tag.attribute'] = { fg = colors.yellow },
             ['@tag.attribute.tsx'] = { fg = colors.yellow },
           }
         end,
