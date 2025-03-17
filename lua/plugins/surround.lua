@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   'tpope/vim-surround',
 }

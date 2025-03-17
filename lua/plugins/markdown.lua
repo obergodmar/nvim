@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   'obergodmar/markdown-preview.nvim',
   cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },

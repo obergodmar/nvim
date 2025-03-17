@@ -9,7 +9,7 @@ function _G.set_terminal_keymaps()
   vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 end
 
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- A neovim lua plugin to help easily manage multiple terminal windows
   'akinsho/toggleterm.nvim',

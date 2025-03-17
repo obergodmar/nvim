@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- A search panel for neovim.
   'nvim-pack/nvim-spectre',

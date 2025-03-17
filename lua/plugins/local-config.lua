@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- Secure load local config files.
   'klen/nvim-config-local',

@@ -33,7 +33,7 @@ local function session()
   return require('auto-session.lib').current_session_name(true)
 end
 
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   'nvim-lualine/lualine.nvim',

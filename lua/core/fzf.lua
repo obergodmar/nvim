@@ -27,7 +27,7 @@ local get_fd_cmd = function()
   return cmd
 end
 
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   'obergodmar/fzf-lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },

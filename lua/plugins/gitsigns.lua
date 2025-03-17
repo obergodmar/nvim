@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- Git integration for buffers
   'lewis6991/gitsigns.nvim',

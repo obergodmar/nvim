@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   'zbirenbaum/copilot.lua',
   cmd = 'Copilot',

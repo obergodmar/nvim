@@ -13,7 +13,7 @@ for i = 1, 9, 1 do
   table.insert(keys, mapBufferlineKeys(i))
 end
 
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- Tabs replacer
   'akinsho/bufferline.nvim',

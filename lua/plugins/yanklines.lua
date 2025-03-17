@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- A neovim plugin which just copies text matched by search to the system clipboard
   'obergodmar/yanklines.nvim',

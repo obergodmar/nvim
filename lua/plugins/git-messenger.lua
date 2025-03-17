@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- Vim and Neovim plugin to reveal the commit messages under the cursor
   'rhysd/git-messenger.vim',

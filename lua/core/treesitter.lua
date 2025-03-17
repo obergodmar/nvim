@@ -1,4 +1,4 @@
----@type LazyPluginSpec
+---@type LazySpec
 local P = {
   -- Nvim Treesitter configurations and abstraction layer
   'nvim-treesitter/nvim-treesitter',
