@@ -25,7 +25,7 @@ local P = {
     })
 
     vim.g.copilot_no_tab_map = true
-    -- vim.g.copilot_proxy = '127.0.0.1:12334'
+    vim.g.copilot_proxy = '127.0.0.1:12334'
   end,
 }
 

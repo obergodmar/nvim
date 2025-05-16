@@ -1,8 +1,9 @@
 ---@type LazySpec
 local P = {
   -- NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.
-  'rebelot/kanagawa.nvim',
-  enabled = false,
+  'obergodmar/kanagawa.nvim',
+  branch = "extra-setup-tmTheme",
+  -- enabled = false,
   opts = {
     theme = 'wave',
     undercurl = true,
@@ -25,15 +26,15 @@ local P = {
     end,
   },
   init = function()
-    vim.cmd.colorscheme(vim.o.background == 'dark' and 'kanagawa-wave' or 'kanagawa-lotus')
+    -- vim.cmd.colorscheme(vim.o.background == 'dark' and 'kanagawa-wave' or 'kanagawa-lotus')
 
-    vim.api.nvim_create_user_command('KanagawaDark', function()
-      vim.cmd.colorscheme('kanagawa-wave')
-    end, { desc = 'Tunr on KanagawaDark theme' })
-
-    vim.api.nvim_create_user_command('KanagawaLight', function()
-      vim.cmd.colorscheme('kanagawa-lotus')
-    end, { desc = 'Tunr on KanagawaLight theme' })
+    -- vim.api.nvim_create_user_command('KanagawaDark', function()
+    --   vim.cmd.colorscheme('kanagawa-wave')
+    -- end, { desc = 'Tunr on KanagawaDark theme' })
+    --
+    -- vim.api.nvim_create_user_command('KanagawaLight', function()
+    --   vim.cmd.colorscheme('kanagawa-lotus')
+    -- end, { desc = 'Tunr on KanagawaLight theme' })
 
     vim.api.nvim_set_hl(0, 'CmpGhostText', { link = 'Comment', default = true })
   end,
