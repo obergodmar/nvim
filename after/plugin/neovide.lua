@@ -6,6 +6,26 @@ if utils.is_neovide() then
   else
     vim.o.guifont = 'Iosevka Nerd Font:b:h12'
   end
+
+  if utils.is_win() then
+    vim.g.terminal_color_0 = '#494d64'
+    vim.g.terminal_color_1 = '#ed8796'
+    vim.g.terminal_color_2 = '#a6da95'
+    vim.g.terminal_color_3 = '#eed49f'
+    vim.g.terminal_color_4 = '#8aadf4'
+    vim.g.terminal_color_5 = '#f5bde6'
+    vim.g.terminal_color_6 = '#8bd5ca'
+    vim.g.terminal_color_7 = '#b8c0e0'
+    vim.g.terminal_color_8 = '#5b6078'
+    vim.g.terminal_color_9 = '#ed8796'
+    vim.g.terminal_color_10 = '#a6da95'
+    vim.g.terminal_color_11 = '#eed49f'
+    vim.g.terminal_color_12 = '#8aadf4'
+    vim.g.terminal_color_13 = '#f5bde6'
+    vim.g.terminal_color_14 = '#8bd5ca'
+    vim.g.terminal_color_15 = '#a5adcb'
+  end
+
   vim.g.neovide_scroll_animation_length = 0.3
   vim.g.neovide_refresh_rate = 60
   vim.g.neovide_cursor_antialiasing = true
@@ -16,12 +36,11 @@ if utils.is_neovide() then
   vim.g.neovide_remember_window_size = true
 
   vim.api.nvim_set_keymap('v', '<sc-c>', '"+y', { noremap = true })
-  vim.api.nvim_set_keymap("n", "<sc-v>", '"+p', { noremap = true }) -- Paste in normal mode (CTRL+Shift+C)
+  vim.api.nvim_set_keymap('n', '<sc-v>', '"+p', { noremap = true }) -- Paste in normal mode (CTRL+Shift+C)
   vim.api.nvim_set_keymap('v', '<sc-v>', '"+P', { noremap = true })
   vim.api.nvim_set_keymap('c', '<sc-v>', '<C-o>l<C-o>"+<C-o>P<C-o>l', { noremap = true })
-  vim.api.nvim_set_keymap("i", "<sc-v>", '<ESC>"+p', { noremap = true }) -- Paste in insert mode (CTRL+Shift+C)
+  vim.api.nvim_set_keymap('i', '<sc-v>', '<ESC>"+p', { noremap = true }) -- Paste in insert mode (CTRL+Shift+C)
   vim.api.nvim_set_keymap('t', '<sc-v>', '<C-\\><C-n>"+Pi', { noremap = true })
-
 
   vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
   vim.keymap.set('v', '<D-c>', '"+y') -- Copy
