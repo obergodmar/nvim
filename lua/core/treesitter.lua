@@ -2,6 +2,7 @@
 local P = {
   -- Nvim Treesitter configurations and abstraction layer
   'nvim-treesitter/nvim-treesitter',
+  event = "VeryLazy",
   dependencies = {
     {
       'nvim-treesitter/nvim-treesitter-context',
