@@ -31,6 +31,7 @@ end
 local P = {
   'obergodmar/fzf-lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  event = "VeryLazy",
   opts = {
     'fzf-native',
     winopts = {
@@ -60,7 +61,7 @@ local P = {
     keymap = {
       builtin = {
         false,
-        ['<M-Esc>'] = 'hide',
+        ['<Esc>'] = 'hide',
         ['<M-F1>'] = 'toggle-help',
         ['<M-F2>'] = 'toggle-fullscreen',
         ['<M-F5>'] = 'toggle-preview-ccw',

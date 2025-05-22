@@ -15,6 +15,7 @@ local dependencies = {
     end),
     {
       'nvim-telescope/telescope.nvim',
+      event = 'VeryLazy',
       dependencies = {
         'obergodmar/telescope-coc.nvim',
       },

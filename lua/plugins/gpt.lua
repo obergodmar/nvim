@@ -1,6 +1,7 @@
 ---@type LazySpec
 local P = {
   'obergodmar/gp.nvim',
+  enabled = false,
   config = function()
     local conf = {
       openai_api_key = os.getenv('OAI_API_KEY'),

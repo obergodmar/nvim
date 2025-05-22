@@ -28,9 +28,6 @@ map('n', '<leader>tmp', ':-tabmove<CR>', { noremap = true, desc = '[T]ab [M]ove 
 -- move current tab to next position
 map('n', '<leader>tmn', ':+tabmove<CR>', { noremap = true, desc = '[Tab] [M]ove to [N]ext position ' })
 
--- save file
-map({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
-
 -- better indenting
 map('v', '<', '<gv')
 map('v', '>', '>gv')
