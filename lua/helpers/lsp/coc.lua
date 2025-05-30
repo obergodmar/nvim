@@ -53,7 +53,7 @@ M.coc = {
   branch = 'master',
   enabled = require('helpers.utils').is_coc_instead_of_lspconfig(),
   build = 'npm ci & npm run build',
-  event = "VeryLazy",
+  event = 'VeryLazy',
   dependencies = dependencies,
   config = function()
     require('ufo').setup()
