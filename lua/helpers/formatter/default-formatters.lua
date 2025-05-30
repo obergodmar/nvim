@@ -58,6 +58,9 @@ return {
       rust = {
         require('formatter.filetypes.rust').rustfmt,
       },
+      nix = {
+        require('formatter.filetypes.nix').nixfmt,
+      },
     }
 
     -- sed on windows works differently and this formatter throws an error
