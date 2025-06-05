@@ -22,6 +22,9 @@ local P = {
           dismiss = '<C-]>',
         },
       },
+      telemetry = {
+        telemetryLevel = 'off',
+      },
     })
 
     vim.g.copilot_no_tab_map = true
