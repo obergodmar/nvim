@@ -62,6 +62,7 @@ M.coc = {
       'coc-typos',
       'coc-pairs',
       'coc-json',
+      'coc-markdownlint',
       'coc-highlight',
 
       'coc-tsserver',
