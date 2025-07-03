@@ -69,7 +69,7 @@ end
 opt.foldcolumn = '1'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
-opt.foldenable = true
+opt.foldenable = false
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
@@ -82,5 +82,4 @@ opt.foldexpr = "v:lua.require'helpers.utils'.foldexpr()"
 opt.foldmethod = 'expr'
 opt.foldtext = ''
 
-opt.sessionoptions="blank,buffers,curdir,tabpages,winsize,winpos,localoptions"
-
+opt.sessionoptions = 'blank,buffers,curdir,tabpages,winsize,winpos,localoptions'
