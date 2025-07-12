@@ -69,7 +69,7 @@ end
 opt.foldcolumn = '1'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
-opt.foldenable = false
+opt.foldenable = true
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
