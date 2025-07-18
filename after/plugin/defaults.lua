@@ -78,8 +78,8 @@ opt.list = true
 opt.listchars:append('trail:⋅')
 
 opt.foldlevel = 99
-opt.foldexpr = "v:lua.require'helpers.utils'.foldexpr()"
-opt.foldmethod = 'expr'
+-- opt.foldexpr = "v:lua.require'helpers.utils'.foldexpr()"
+-- opt.foldmethod = 'expr'
 opt.foldtext = ''
 
 opt.sessionoptions = 'blank,buffers,curdir,tabpages,winsize,winpos,localoptions'
