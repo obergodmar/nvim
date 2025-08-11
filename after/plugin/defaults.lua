@@ -66,7 +66,7 @@ else
   opt.shell = 'zsh'
 end
 
-opt.foldcolumn = '1'
+opt.foldcolumn = '0'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
@@ -78,8 +78,8 @@ opt.list = true
 opt.listchars:append('trail:⋅')
 
 opt.foldlevel = 99
--- opt.foldexpr = "v:lua.require'helpers.utils'.foldexpr()"
--- opt.foldmethod = 'expr'
+opt.foldexpr = "v:lua.require'helpers.utils'.foldexpr()"
+opt.foldmethod = 'expr'
 opt.foldtext = ''
 
-opt.sessionoptions = 'blank,buffers,curdir,tabpages,winsize,winpos,localoptions'
+opt.sessionoptions = 'blank,buffers,curdir,tabpages,winsize,winpos'
