@@ -47,7 +47,7 @@ local P = {
       theme = 'catppuccin',
     },
     sections = {
-      lualine_a = { 'mode' },
+      lualine_a = { win_num, 'filesize', 'mode' },
       lualine_b = {
         'branch',
         {
@@ -82,10 +82,7 @@ local P = {
           },
         },
       },
-      lualine_c = {
-        relative_path_with_path,
-        'filesize',
-      },
+      lualine_c = {},
       lualine_x = {
         'g:coc_status',
         "require'lsp-status'.status()",
@@ -98,9 +95,9 @@ local P = {
       lualine_z = { 'location' },
     },
     inactive_sections = {
-      lualine_a = { win_num },
+      lualine_a = { win_num, 'filesize' },
       lualine_b = { git_head },
-      lualine_c = { relative_path_with_path, 'filesize' },
+      lualine_c = {},
       lualine_x = { 'location' },
       lualine_y = {},
       lualine_z = {},
