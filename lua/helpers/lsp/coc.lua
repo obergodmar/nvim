@@ -218,8 +218,25 @@ M.coc = {
       },
     })
 
-    vim.cmd([[hi link CocSemTypeModVariableReadonly @lsp.type.const]])
-    vim.cmd([[hi link CocSemTypeModVariableDeclaration @lsp.type.const]])
+    local function link(a, b)
+      pcall(vim.api.nvim_set_hl, 0, a, { link = b })
+    end
+
+    local function reapply()
+      vim.api.nvim_set_hl(0, '@variable', {})
+
+      link('@lsp.typemod.variable.declaration', '@lsp.type.const')
+      link('@lsp.typemod.variable.readonly', '@lsp.type.const')
+
+      link('CocSemTypeModVariableDeclaration', '@lsp.type.const')
+      link('CocSemTypeModVariableReadonly', '@lsp.type.const')
+    end
+
+    vim.api.nvim_create_autocmd({ 'ColorScheme', 'User' }, {
+      pattern = { '*', 'CocNvimInit' },
+      callback = reapply,
+    })
+    reapply()
   end,
 }
 

@@ -2,6 +2,7 @@
 local P = {
   'catppuccin/nvim',
   name = 'catppuccin',
+  tag = 'v1.11.0',
   priority = 1000,
   config = function()
     require('catppuccin').setup({
@@ -33,6 +34,7 @@ local P = {
         all = function(colors)
           return {
             ['@lsp.type.const'] = { fg = colors.peach },
+            ['@lsp.typemod.variable.readonly'] = { fg = colors.peach },
             ['@tag.builtin.tsx'] = { fg = colors.blue },
             ['@tag.attribute'] = { fg = colors.yellow },
             ['@tag.attribute.tsx'] = { fg = colors.yellow },
