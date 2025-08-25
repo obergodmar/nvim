@@ -12,6 +12,8 @@
   "sumneko-lua.serverDir": "/home/obergodmar/.local/share/lua-language-server",
 
   "tsserver.useLocalTsdk": true,
+  "tsserver.maxTsServerMemory": 4096,
+  "tsserver.disableAutomaticTypeAcquisition": true,
   "semanticTokens.enable": true,
 
   "codeLens.enable": true,
@@ -19,6 +21,8 @@
 
   "suggest.virtualText": true,
   "suggest.insertMode": "replace",
+
+  "inlayHint.enable": true,
 
   "javascript.referencesCodeLens.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
@@ -35,14 +39,21 @@
   "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
   "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
-  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterNames.enabled": "none",
 
   "list.floatPreview": true,
 
+  "signature.enable": true,
+  "suggest.autoTrigger": "trigger",
+
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.enableHighlightLineNumber": true,
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.checkCurrentLine": false,
 
   "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.run": "onSave",
 
   "css.validate": false,
 
@@ -107,5 +118,6 @@
   "suggest.languageSourcePriority": 99,
   "coc.source.file.priority": 2,
   "coc.source.around.priority": 3,
-  "coc.source.buffer.priority": 4
+  "coc.source.buffer.priority": 4,
+  "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
 }

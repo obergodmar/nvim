@@ -33,7 +33,7 @@ local P = {
           gs.next_hunk()
         end)
         return '<Ignore>'
-      end, { expr = true, desc = "[gitsigns] Next Hunk" })
+      end, { expr = true, desc = '[gitsigns] Next Hunk' })
 
       map('n', '[c', function()
         if vim.wo.diff then
@@ -43,7 +43,7 @@ local P = {
           gs.prev_hunk()
         end)
         return '<Ignore>'
-      end, { expr = true, desc = "[gitsigns] Prev Hunk" })
+      end, { expr = true, desc = '[gitsigns] Prev Hunk' })
 
       -- Actions
       map('n', '<leader>hs', gs.stage_hunk, { desc = '[gitsigns] Stage Hunk' })
