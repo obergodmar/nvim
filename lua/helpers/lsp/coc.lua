@@ -232,10 +232,6 @@ M.coc = {
       link('CocSemTypeModVariableReadonly', '@lsp.type.const')
     end
 
-    vim.api.nvim_create_autocmd({ 'ColorScheme', 'User' }, {
-      pattern = { '*', 'CocNvimInit' },
-      callback = reapply,
-    })
     reapply()
   end,
 }

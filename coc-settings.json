@@ -13,7 +13,6 @@
 
   "tsserver.useLocalTsdk": true,
   "tsserver.maxTsServerMemory": 4096,
-  "tsserver.disableAutomaticTypeAcquisition": true,
   "semanticTokens.enable": true,
 
   "codeLens.enable": true,
@@ -39,12 +38,12 @@
   "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
   "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
-  "typescript.inlayHints.parameterNames.enabled": "none",
+  "typescript.inlayHints.parameterNames.enabled": "all",
 
   "list.floatPreview": true,
 
   "signature.enable": true,
-  "suggest.autoTrigger": "trigger",
+  "suggest.autoTrigger": "always",
 
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
@@ -53,7 +52,7 @@
   "diagnostic.checkCurrentLine": false,
 
   "eslint.workingDirectories": [{ "mode": "auto" }],
-  "eslint.run": "onSave",
+  "eslint.run": "onType",
 
   "css.validate": false,
 
@@ -118,6 +117,5 @@
   "suggest.languageSourcePriority": 99,
   "coc.source.file.priority": 2,
   "coc.source.around.priority": 3,
-  "coc.source.buffer.priority": 4,
-  "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
+  "coc.source.buffer.priority": 4
 }
