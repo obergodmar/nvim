@@ -2,6 +2,7 @@
 local P = {
   -- Nvim Treesitter configurations and abstraction layer
   'nvim-treesitter/nvim-treesitter',
+  tag = 'v0.10.0',
   dependencies = {
     {
       'nvim-treesitter/nvim-treesitter-context',
