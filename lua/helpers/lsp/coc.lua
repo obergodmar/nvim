@@ -72,6 +72,7 @@ M.coc = {
       'coc-sumneko-lua',
     }
     vim.g.coc_list_preview_filetype = true
+    vim.g.coc_highlight_maximum_count = 10000
 
     -- Function definitions
     function _G.check_back_space()
@@ -218,21 +219,12 @@ M.coc = {
       },
     })
 
-    local function link(a, b)
-      pcall(vim.api.nvim_set_hl, 0, a, { link = b })
-    end
-
-    local function reapply()
-      vim.api.nvim_set_hl(0, '@variable', {})
-
-      link('@lsp.typemod.variable.declaration', '@lsp.type.const')
-      link('@lsp.typemod.variable.readonly', '@lsp.type.const')
-
-      link('CocSemTypeModVariableDeclaration', '@lsp.type.const')
-      link('CocSemTypeModVariableReadonly', '@lsp.type.const')
-    end
-
-    reapply()
+    vim.api.nvim_create_autocmd('BufEnter', {
+      pattern = 'diffview://*',
+      callback = function()
+        vim.b.coc_enabled = false
+      end,
+    })
   end,
 }
 
