@@ -217,6 +217,20 @@ M.coc = {
         remap = false,
         { '<C-s>', '<Plug>(coc-range-select)', desc = 'Select range' },
       },
+
+      {
+        mode = { 'n', 'v' },
+        nowait = true,
+        remap = false,
+        {
+          '<leader>r',
+          function()
+            vim.cmd('silent! CocRestart')
+          end,
+          expr = true,
+          desc = 'Silent CocRestart',
+        },
+      },
     })
 
     vim.api.nvim_create_autocmd('BufEnter', {

@@ -15,13 +15,13 @@
   "tsserver.maxTsServerMemory": 4096,
   "semanticTokens.enable": true,
 
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "codeLens.position": "eol",
 
   "suggest.virtualText": true,
   "suggest.insertMode": "replace",
 
-  "inlayHint.enable": true,
+  "inlayHint.enable": false,
 
   "javascript.referencesCodeLens.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
@@ -48,8 +48,8 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.enableHighlightLineNumber": true,
-  "diagnostic.refreshOnInsertMode": false,
-  "diagnostic.checkCurrentLine": false,
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.checkCurrentLine": true,
 
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "eslint.run": "onType",
