@@ -17,7 +17,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { import = 'core' },
   { import = 'plugins' },
 }, {
   root = vim_data_path .. '/plugins',

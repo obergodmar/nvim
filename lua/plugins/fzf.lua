@@ -1,4 +1,4 @@
-local keys = require('helpers.search.keys')
+local keys = require('helpers.search-keys')
 
 local get_cwd = function()
   local cmd

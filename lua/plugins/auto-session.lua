@@ -1,4 +1,4 @@
-local P = {
+return {
   'rmagatti/auto-session',
   lazy = false,
   keys = {
@@ -32,5 +32,3 @@ local P = {
     -- log_level = 'debug',
   },
 }
-
-return P

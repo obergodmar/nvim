@@ -16,7 +16,7 @@ local P = {
     require('formatter').setup({
       logging = true,
       log_level = vim.log.levels.WARN,
-      filetype = require('helpers.formatter.default-formatters').getFormatters(),
+      filetype = require('helpers.default-formatters').getFormatters(),
     })
   end,
 }

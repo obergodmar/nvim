@@ -1,5 +1,6 @@
 return {
   globals = {
     'vim',
+    'jit',
   },
 }
