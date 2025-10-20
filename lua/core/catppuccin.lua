@@ -6,6 +6,7 @@ local P = {
   priority = 1000,
   config = function()
     require('catppuccin').setup({
+      term_colors = true,
       integrations = {
         coc_nvim = true,
         fidget = true,

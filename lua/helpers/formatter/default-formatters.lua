@@ -23,7 +23,7 @@ return {
         require('formatter.filetypes.json').prettier,
       },
       markdown = {
-        require('formatter.filetypes.markdown').prettier,
+        require('formatter.filetypes.markdown').mdformat,
       },
       css = {
         require('formatter.filetypes.css').prettier,
