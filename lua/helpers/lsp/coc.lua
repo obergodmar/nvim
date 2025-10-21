@@ -64,6 +64,8 @@ M.coc = {
       'coc-json',
       'coc-markdownlint',
       'coc-highlight',
+      'coc-spell-checker',
+      'coc-cspell-dicts',
 
       'coc-tsserver',
       'coc-css',

@@ -1,8 +1,5 @@
 {
   "sumneko-lua.enableNvimLuaDev": true,
-  "sumneko-lua.serverDir": "/Users/obergodmar/.config/coc/extensions/coc-sumneko-lua-data/sumneko-lua-ls/extension/server",
-  "Lua.workspace.library": [
-    // "~/.local/share/nvim"
-  ],
+  "Lua.workspace.library": ["~/.local/share/nvim"],
   "Lua.workspace.checkThirdParty": "Disable"
 }

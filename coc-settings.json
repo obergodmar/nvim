@@ -1,6 +1,10 @@
 {
   "java.compile.nullAnalysis.mode": "automatic",
 
+  "cSpellExt.enableDictionaries": ["russian"],
+  "cSpell.language": "en,ru",
+  "cSpell.showStatus": false,
+
   "Lua.codeLens.enable": true,
   "Lua.workspace.checkThirdParty": true,
   "Lua.misc.parameters": [
