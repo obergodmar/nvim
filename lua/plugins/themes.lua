@@ -39,6 +39,19 @@ return {
               ['@tag.builtin.tsx'] = { fg = colors.blue },
               ['@tag.attribute'] = { fg = colors.yellow },
               ['@tag.attribute.tsx'] = { fg = colors.yellow },
+
+              ['GitGraphHash'] = { fg = colors.yellow },
+              ['GitGraphTimestamp'] = { fg = colors.green },
+              ['GitGraphAuthor'] = { fg = colors.flamingo },
+              ['GitGraphBranchName'] = { fg = colors.pink },
+              ['GitGraphBranchTag'] = { fg = colors.yellow },
+              ['GitGraphBranchMsg'] = { fg = colors.text },
+
+              ['GitGraphBranch1'] = { fg = colors.mauve },
+              ['GitGraphBranch2'] = { fg = colors.red },
+              ['GitGraphBranch3'] = { fg = colors.peach },
+              ['GitGraphBranch4'] = { fg = colors.yellow },
+              ['GitGraphBranch5'] = { fg = colors.green },
             }
           end,
         },
