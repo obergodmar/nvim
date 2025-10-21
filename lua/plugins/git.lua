@@ -2,7 +2,18 @@ return {
   { 'tpope/vim-fugitive', event = 'VeryLazy' },
   {
     'isakbm/gitgraph.nvim',
-    dependencies = { 'sindrets/diffview.nvim' },
+    dependencies = {
+      'sindrets/diffview.nvim',
+      keys = {
+        {
+          '<leader>gd',
+          function()
+            vim.cmd(':DiffviewOpen')
+          end,
+          desc = 'Diffview - Open',
+        },
+      },
+    },
     event = 'VeryLazy',
     opts = {
       hooks = {

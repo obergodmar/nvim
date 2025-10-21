@@ -89,6 +89,7 @@ local P = {
 
     keys.find_files(function()
       require('fzf-lua').files({
+        cwd_prompt = false,
         use_absolute_paths = true,
         cmd = get_fd_cmd(),
       })
