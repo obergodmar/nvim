@@ -17,7 +17,7 @@ return {
           enabled = false,
         },
         nes = {
-          enabled = true,
+          enabled = false,
           auto_trigger = true,
           keymap = {
             accept_and_goto = '<C-x>',
