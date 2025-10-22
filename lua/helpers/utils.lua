@@ -7,6 +7,7 @@ end
 
 ---@return boolean
 function M.is_mac()
+---@diagnostic disable-next-line: undefined-global
   return jit.os == 'OSX'
 end
 
