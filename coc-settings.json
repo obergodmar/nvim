@@ -6,7 +6,7 @@
   "cSpell.showStatus": false,
 
   "Lua.codeLens.enable": true,
-  "Lua.workspace.checkThirdParty": true,
+  "Lua.workspace.checkThirdParty": "Disable",
 
   "tsserver.useLocalTsdk": true,
   "tsserver.maxTsServerMemory": 4096,

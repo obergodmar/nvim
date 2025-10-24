@@ -46,6 +46,9 @@ local P = {
         border = 'noborder',
       },
     },
+    defaults = {
+      absolute_path = true,
+    },
     buffers = {
       ignore_current_buffer = true,
       show_unloaded = true,
@@ -92,7 +95,6 @@ local P = {
     keys.find_files(function()
       require('fzf-lua').files({
         cwd_prompt = false,
-        absolute_path = true,
         cmd = build_fd_file_search_cmd(),
       })
     end, 'fzf'),
@@ -112,7 +114,6 @@ local P = {
     keys.git_files(function()
       require('fzf-lua').git_files({
         cwd_prompt = false,
-        absolute_path = true,
         cmd = build_fd_file_search_cmd(),
       })
     end, 'fzf'),
