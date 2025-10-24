@@ -1,6 +1,6 @@
 local keys = require('helpers.search-keys')
 
-local get_cwd = function()
+local get_project_root = function()
   local cmd
 
   if require('helpers.utils').is_win() then
@@ -13,14 +13,16 @@ local get_cwd = function()
   return cwd
 end
 
-local get_fd_cmd = function()
+local build_fd_file_search_cmd = function()
   local cmd
 
   if require('helpers.utils').is_win() then
-    cmd = 'fd --absolute-path . ' .. get_cwd() .. ' --color=never --type f --hidden --follow --exclude .git 2> nul'
+    cmd = 'fd --absolute-path . '
+      .. get_project_root()
+      .. ' --color=never --type f --hidden --follow --exclude .git 2> nul'
   else
     cmd = 'fd --absolute-path . '
-      .. get_cwd()
+      .. get_project_root()
       .. ' --color=never --type f --hidden --follow --exclude .git 2> /dev/null'
   end
 
@@ -29,9 +31,9 @@ end
 
 ---@type LazySpec
 local P = {
-  'obergodmar/fzf-lua',
+  'ibhagwan/fzf-lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  event = "VeryLazy",
+  event = 'VeryLazy',
   opts = {
     'fzf-native',
     winopts = {
@@ -90,8 +92,8 @@ local P = {
     keys.find_files(function()
       require('fzf-lua').files({
         cwd_prompt = false,
-        use_absolute_paths = true,
-        cmd = get_fd_cmd(),
+        absolute_path = true,
+        cmd = build_fd_file_search_cmd(),
       })
     end, 'fzf'),
 
@@ -109,7 +111,9 @@ local P = {
 
     keys.git_files(function()
       require('fzf-lua').git_files({
-        cmd = get_fd_cmd(),
+        cwd_prompt = false,
+        absolute_path = true,
+        cmd = build_fd_file_search_cmd(),
       })
     end, 'fzf'),
 

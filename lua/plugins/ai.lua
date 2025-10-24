@@ -11,38 +11,42 @@ return {
         end,
       },
     },
-    config = function()
-      require('copilot').setup({
-        panel = {
-          enabled = false,
+    opts = {
+      panel = {
+        enabled = false,
+      },
+      nes = {
+        enabled = false,
+        auto_trigger = true,
+        keymap = {
+          accept_and_goto = '<C-x>',
+          accept = false,
+          dismiss = '<C-c>',
         },
-        nes = {
-          enabled = false,
-          auto_trigger = true,
-          keymap = {
-            accept_and_goto = '<C-x>',
-            accept = false,
-            dismiss = '<C-c>',
-          },
+      },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        hide_during_completion = true,
+        debounce = 75,
+        keymap = {
+          accept = '<S-Tab>',
+          accept_word = false,
+          accept_line = false,
+          next = '<M-]>',
+          prev = '<M-[>',
+          dismiss = '<C-]>',
         },
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          hide_during_completion = true,
-          debounce = 75,
-          keymap = {
-            accept = '<S-Tab>',
-            accept_word = false,
-            accept_line = false,
-            next = '<M-]>',
-            prev = '<M-[>',
-            dismiss = '<C-]>',
-          },
-        },
-        telemetry = {
-          telemetryLevel = 'off',
-        },
-      })
+      },
+      telemetry = {
+        telemetryLevel = 'off',
+      },
+    },
+    config = function(_, opts)
+      if require('helpers.utils').is_mac() then
+        opts.copilot_node_command = vim.fn.expand('$HOME') .. '/.nvm/versions/node/v22.21.0/bin/node'
+      end
+      require('copilot').setup(opts)
 
       vim.g.copilot_no_tab_map = true
       vim.g.copilot_proxy = '127.0.0.1:12334'

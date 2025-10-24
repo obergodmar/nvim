@@ -7,13 +7,6 @@
 
   "Lua.codeLens.enable": true,
   "Lua.workspace.checkThirdParty": true,
-  "Lua.misc.parameters": [
-    "--metapath",
-    "~/.cache/sumneko_lua/meta",
-    "--logpath",
-    "~/.cache/sumneko_lua/log"
-  ],
-  "sumneko-lua.serverDir": "/home/obergodmar/.local/share/lua-language-server",
 
   "tsserver.useLocalTsdk": true,
   "tsserver.maxTsServerMemory": 4096,
