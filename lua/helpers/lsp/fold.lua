@@ -36,6 +36,7 @@ M.add_ufo_folding = function(hoverFn)
   local ftMap = {
     css = { 'treesitter', 'indent' },
     php = { 'treesitter', 'indent' },
+    markdown = { 'treesitter' },
     git = '',
   }
 
