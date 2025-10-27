@@ -2,7 +2,7 @@ return {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    tag = 'v1.11.0',
+    branch = 'main',
     priority = 1000,
     config = function()
       require('catppuccin').setup({
@@ -34,9 +34,16 @@ return {
         highlight_overrides = {
           all = function(colors)
             return {
-              ['@lsp.type.const'] = { fg = colors.peach },
-              ['@lsp.typemod.variable.readonly'] = { fg = colors.peach },
+              ['CocSemTypeModVariableDeclarationReadonlyLocal'] = { fg = colors.peach },
+              ['CocSemTypeModVariableReadonlyLocal'] = { fg = colors.peach },
+              ['CocSemTypeModVariableReadonly'] = { fg = colors.peach },
+
+              ['CocSemTypeModFunctionDeclarationReadonlyLocal'] = { fg = colors.blue },
+              ['CocSemTypeModFunctionReadonly'] = { fg = colors.blue },
+
               ['@tag.builtin.tsx'] = { fg = colors.blue },
+              ['@tag.tsx'] = { fg = colors.pink },
+
               ['@tag.attribute'] = { fg = colors.yellow },
               ['@tag.attribute.tsx'] = { fg = colors.yellow },
 

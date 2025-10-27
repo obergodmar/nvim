@@ -126,31 +126,43 @@ return {
     version = '*',
     event = 'BufEnter',
     dependencies = 'nvim-tree/nvim-web-devicons',
-    opts = {
-      ---@type bufferline.Options
-      ---@diagnostic disable-next-line: missing-fields
-      options = {
-        mode = 'tabs',
-        numbers = 'ordinal',
-        indicator = { style = 'underline' },
-        -- diagnostics = require('helpers.utils').is_coc_instead_of_lspconfig() and 'coc' or 'nvim_lsp',
-        diagnostics = nil,
-        color_icons = true,
-        always_show_bufferline = false,
-        show_buffer_close_icons = false,
-        show_duplicate_prefix = false,
-        show_close_icon = false,
-        separator_style = 'thin',
-        modified_icon = '[+]',
-        offsets = {
-          {
-            filetype = 'NvimTree',
-            text_align = 'center',
-            separator = true,
+    config = function()
+      local macchiato = require('catppuccin.palettes').get_palette('macchiato')
+
+      require('bufferline').setup({
+        ---@type bufferline.Options
+        ---@diagnostic disable-next-line: missing-fields
+        options = {
+          mode = 'tabs',
+          numbers = 'ordinal',
+          indicator = { style = 'underline' },
+          -- diagnostics = require('helpers.utils').is_coc_instead_of_lspconfig() and 'coc' or 'nvim_lsp',
+          diagnostics = nil,
+          color_icons = true,
+          always_show_bufferline = false,
+          show_buffer_close_icons = false,
+          show_duplicate_prefix = false,
+          show_close_icon = false,
+          separator_style = 'thin',
+          modified_icon = '[+]',
+          offsets = {
+            {
+              filetype = 'NvimTree',
+              text_align = 'center',
+              separator = true,
+            },
           },
         },
-      },
-    },
+
+        highlights = require('catppuccin.special.bufferline').get_theme({
+          custom = {
+            all = {
+              fill = { bg = macchiato.mantle },
+            },
+          },
+        }),
+      })
+    end,
     keys = generateBufferlineKeys(),
   },
   {

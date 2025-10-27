@@ -11,6 +11,9 @@
   "tsserver.useLocalTsdk": true,
   "tsserver.maxTsServerMemory": 4096,
   "semanticTokens.enable": true,
+  "semanticTokens.highlightPriority": 500,
+  "semanticTokens.combinedModifiers": ["readonly", "declaration", "local"],
+  "semanticTokens.incrementTypes": ["variable"],
 
   "codeLens.enable": false,
   "codeLens.position": "eol",
