@@ -180,13 +180,15 @@ M.coc = {
         mode = { 'i' },
         nowait = true,
         remap = false,
+        silent = true,
         {
           '<TAB>',
           'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
           expr = true,
           desc = 'Autocomplete/Next',
         },
-        { '<S-TAB>', 'coc#pum#visible() ? coc#pum#prev(1) : "\\<C-h>"', expr = true, desc = 'Autocomplete/Previous' },
+        -- TODO: Decide whether to enable this or not. I dont usually use <S-TAB> since it is for copilot autocomplete
+        -- { '<S-TAB>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], expr = true, desc = 'Autocomplete/Previous' },
         { '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', expr = true, desc = 'Confirm autocomplete' },
         { '<C-z>', 'coc#refresh()', expr = true, desc = 'Refresh Coc' },
         { '<C-j>', '<Plug>(coc-snippets-expand-jump)', desc = 'Jump in snippet' },
@@ -210,14 +212,6 @@ M.coc = {
         { 'af', '<Plug>(coc-funcobj-a)', desc = 'Around function object' },
         { 'ic', '<Plug>(coc-classobj-i)', desc = 'Inner class object' },
         { 'ac', '<Plug>(coc-classobj-a)', desc = 'Around class object' },
-      },
-
-      -- SELECTION RANGE
-      {
-        mode = { 'n', 'x' },
-        nowait = true,
-        remap = false,
-        { '<C-s>', '<Plug>(coc-range-select)', desc = 'Select range' },
       },
 
       {
