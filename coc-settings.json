@@ -8,6 +8,10 @@
   "Lua.codeLens.enable": true,
   "Lua.workspace.checkThirdParty": "Disable",
 
+  // Instead use CocCommand sumneko-lua.install
+  "sumneko-lua.prompt": false,
+  "sumneko-lua.logPath": "~/.cache/nvim/lua-ls.log",
+
   "tsserver.useLocalTsdk": true,
   "tsserver.maxTsServerMemory": 4096,
   "semanticTokens.enable": true,

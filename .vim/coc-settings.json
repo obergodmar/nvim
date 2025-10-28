@@ -1,6 +1,4 @@
 {
-  // Instead use CocCommand sumneko-lua.install
-  "sumneko-lua.prompt": false,
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.workspace.library": ["~/.local/share/nvim"],
   "Lua.workspace.checkThirdParty": "Disable"
