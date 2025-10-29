@@ -40,6 +40,7 @@ return {
 
               ['CocSemTypeModFunctionDeclarationReadonlyLocal'] = { fg = colors.blue },
               ['CocSemTypeModFunctionReadonly'] = { fg = colors.blue },
+              ['CocSemTypeModFunction'] = { fg = colors.blue },
 
               ['@tag.builtin.tsx'] = { fg = colors.blue },
               ['@tag.tsx'] = { fg = colors.pink },
