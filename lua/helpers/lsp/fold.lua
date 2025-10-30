@@ -52,9 +52,27 @@ M.add_ufo_folding = function(hoverFn)
         config = function()
           local builtin = require('statuscol.builtin')
           require('statuscol').setup({
+            relculright = true,
+            setopt = true,
             segments = {
               {
-                text = { '%s', builtin.lnumfunc, ' ' },
+                sign = {
+                  name = { '.*' },
+                  text = { '.*' },
+                  namespace = { 'coc-diagnostic' },
+                  maxwidth = 1,
+                  colwidth = 2,
+                },
+              },
+              {
+                text = { builtin.lnumfunc, " " },
+              },
+              {
+                sign = {
+                  namespace = { 'gitsigns' },
+                  maxwidth = 1,
+                  colwidth = 1,
+                },
               },
               {
                 text = {

@@ -277,4 +277,13 @@ return {
       require('which-key').setup(opts)
     end,
   },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {
+      indent = { char = '▏' },
+    },
+  },
 }

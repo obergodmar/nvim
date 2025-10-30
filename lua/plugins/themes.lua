@@ -39,8 +39,18 @@ return {
               ['CocSemTypeModVariableReadonly'] = { fg = colors.peach },
 
               ['CocSemTypeModFunctionDeclarationReadonlyLocal'] = { fg = colors.blue },
+              ['CocSemTypeModFunctionDeclaration'] = { fg = colors.blue },
+              ['CocSemTypeModFunctionReadonlyLocal'] = { fg = colors.blue },
               ['CocSemTypeModFunctionReadonly'] = { fg = colors.blue },
               ['CocSemTypeModFunction'] = { fg = colors.blue },
+
+              ['CocSemTypeModMethodDeclarationReadonlyLocal'] = { fg = colors.blue },
+              ['CocSemTypeModMethodDeclaration'] = { fg = colors.blue },
+              ['CocSemTypeModMethodReadonlyLocal'] = { fg = colors.blue },
+              ['CocSemTypeModMethodReadonly'] = { fg = colors.blue },
+              ['CocSemTypeModMethod'] = { fg = colors.blue },
+
+              ['CocSemTypeModParameter'] = { fg = colors.red },
 
               ['@tag.builtin.tsx'] = { fg = colors.blue },
               ['@tag.tsx'] = { fg = colors.pink },
@@ -60,6 +70,9 @@ return {
               ['GitGraphBranch3'] = { fg = colors.peach },
               ['GitGraphBranch4'] = { fg = colors.yellow },
               ['GitGraphBranch5'] = { fg = colors.green },
+
+              ['IblIndent'] = { fg = colors.surface1 },
+              ['IblScope'] = { fg = colors.overlay1 },
             }
           end,
         },

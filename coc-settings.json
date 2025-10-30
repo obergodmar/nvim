@@ -25,7 +25,7 @@
   "suggest.virtualText": true,
   "suggest.insertMode": "replace",
 
-  "inlayHint.enable": false,
+  "inlayHint.enable": true,
 
   "javascript.referencesCodeLens.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,

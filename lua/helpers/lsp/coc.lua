@@ -59,7 +59,6 @@ M.coc = {
     require('ufo').setup()
 
     vim.g.coc_global_extensions = {
-      'coc-typos',
       'coc-pairs',
       'coc-json',
       'coc-markdownlint',
