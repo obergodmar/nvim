@@ -38,10 +38,28 @@ local function mapBufferlineKeys(goToIndex)
 end
 
 local function generateBufferlineKeys()
-  local keys = {}
+  local keys = {
+    {
+      '<leader>0',
+      '<cmd>tablast<cr>',
+      id = 'go_to_last_tab',
+      desc = 'Go to last tab',
+      mode = 'n',
+    },
+
+    {
+      '<leader>a',
+      '<cmd>lua require("bufferline").go_to(vim.g.last_active_tab, true)<cr>',
+      id = 'go_to_last_active_tab',
+      desc = 'Go to last active tab',
+      mode = 'n',
+    },
+  }
+
   for i = 1, 9, 1 do
     table.insert(keys, mapBufferlineKeys(i))
   end
+
   return keys
 end
 

@@ -46,7 +46,6 @@ if utils.is_neovide() then
   vim.api.nvim_set_keymap('i', '<sc-v>', '<ESC>"+p', { noremap = true }) -- Paste in insert mode (CTRL+Shift+C)
   vim.api.nvim_set_keymap('t', '<sc-v>', '<C-\\><C-n>"+Pi', { noremap = true })
 
-  vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
   vim.keymap.set('v', '<D-c>', '"+y') -- Copy
   vim.keymap.set('n', '<D-v>', '"+P') -- Paste normal mode
   vim.keymap.set('v', '<D-v>', '"+P') -- Paste visual mode
