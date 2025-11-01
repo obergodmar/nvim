@@ -3,7 +3,7 @@
   "auto-session": { "branch": "main", "commit": "cb8db2b20ffff8564c0418902d67eb11cea037fe" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "8c4125e3c746976ba025dc5d908fa22c6aa09486" },
-  "coc.nvim": { "branch": "master", "commit": "2a6cab43d2021b10bdb2969afa4c000b345982b2" },
+  "coc.nvim": { "branch": "master", "commit": "1ef9d63e0d717967fb94aeab0194932adcfcc5f7" },
   "copilot-lsp": { "branch": "main", "commit": "a80e0c17e7366614d39506825f49a25d285fead9" },
   "copilot.lua": { "branch": "master", "commit": "3123983d00ae6859f8bc987d14ebb524bb41b618" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },

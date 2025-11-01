@@ -142,7 +142,6 @@ M.coc = {
         { '<leader>cr', '<Plug>(coc-rename)', desc = 'Rename symbol' },
         { '<leader>ca', '<Plug>(coc-codeaction-cursor)', desc = 'Cursor code actions' },
         { '<leader>cs', '<Plug>(coc-codeaction-source)', desc = 'Source code actions' },
-        { '<leader>ac', '<Plug>(coc-codeaction)', desc = 'Apply code actions' },
         { '<leader>cq', '<Plug>(coc-fix-current)', desc = 'Fix current issue' },
         -- { '<leader>cl', '<Plug>(coc-codelens-action)', desc = 'CodeLens action' },
         -- CocList mappings
