@@ -54,6 +54,13 @@ opt.fileencodings = 'utf-8,cp1251'
 
 if utils.is_mac() then
   opt.rtp:append('/opt/homebrew/opt/fzf')
+  vim.o.langmap = 'фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz,'
+    .. 'ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,'
+    .. '№#,%;$'
+else
+  vim.o.langmap = 'фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz,'
+    .. 'ФA,ИB,СC,ВD,УE,АF,ПG,РH,ШI,ОJ,ЛK,ДL,ЬM,ТN,ЩO,ЗP,ЙQ,КR,ЫS,ЕT,ГU,МV,ЦW,ЧX,НY,ЯZ,'
+    .. '№#,;$'
 end
 
 opt.lazyredraw = false

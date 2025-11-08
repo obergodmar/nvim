@@ -59,11 +59,6 @@ map('n', '<leader>cn', '<cmd>:let @+ = expand("%:t")<cr>', { desc = '[C]opy file
 map('n', '<PageUp>', '', { silent = true })
 map('n', '<PageDown>', '', { silent = true })
 
-map('n', 'ф', 'a', { silent = true })
-map('n', 'ш', 'i', { silent = true })
-map('n', 'щ', 'o', { silent = true })
-map('n', 'Щ', 'O', { silent = true })
-
 map('n', '<S-Up>', 'v<Up>', { silent = true })
 map('n', '<S-Right>', 'v<Right>', { silent = true })
 map('n', '<S-Down>', 'v<Down>', { silent = true })
@@ -76,12 +71,19 @@ map({ 'v', 'i' }, '<S-Left>', '<Left>', { silent = true })
 
 map({ 'n', 'v' }, '<leader>y', '"+y', { silent = true })
 map({ 'n', 'v' }, '<leader>Y', '"+yg_', { silent = true })
+map({ 'n', 'v' }, '<leader>н', '"+y', { silent = true })
+map({ 'n', 'v' }, '<leader>Н', '"+yg_', { silent = true })
 
 map({ 'n', 'v' }, '<leader>p', '"+p', { silent = true })
 map({ 'n', 'v' }, '<leader>P', '"+P', { silent = true })
+map({ 'n', 'v' }, '<leader>з', '"+p', { silent = true })
+map({ 'n', 'v' }, '<leader>З', '"+P', { silent = true })
 
 map({ 'n', 'v' }, '<M-p>', '"0p', { silent = true })
 map({ 'n', 'v' }, '<M-P>', '"0P', { silent = true })
+map({ 'n', 'v' }, '<M-з>', '"0p', { silent = true })
+map({ 'n', 'v' }, '<M-З>', '"0P', { silent = true })
+
 
 ---@return string|string[]|nil
 local function get_last_search()

@@ -40,17 +40,36 @@ if utils.is_neovide() then
   vim.g.experimental_layer_grouping = true
 
   vim.api.nvim_set_keymap('v', '<sc-c>', '"+y', { noremap = true })
-  vim.api.nvim_set_keymap('n', '<sc-v>', '"+p', { noremap = true }) -- Paste in normal mode (CTRL+Shift+C)
-  vim.api.nvim_set_keymap('v', '<sc-v>', '"+P', { noremap = true })
-  vim.api.nvim_set_keymap('c', '<sc-v>', '<C-o>l<C-o>"+<C-o>P<C-o>l', { noremap = true })
-  vim.api.nvim_set_keymap('i', '<sc-v>', '<ESC>"+p', { noremap = true }) -- Paste in insert mode (CTRL+Shift+C)
-  vim.api.nvim_set_keymap('t', '<sc-v>', '<C-\\><C-n>"+Pi', { noremap = true })
+  vim.api.nvim_set_keymap('v', '<sc-с>', '"+y', { noremap = true })
 
-  vim.keymap.set('v', '<D-c>', '"+y') -- Copy
-  vim.keymap.set('n', '<D-v>', '"+P') -- Paste normal mode
-  vim.keymap.set('v', '<D-v>', '"+P') -- Paste visual mode
-  vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
-  vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+  vim.api.nvim_set_keymap('n', '<sc-v>', '"+p', { noremap = true })
+  vim.api.nvim_set_keymap('n', '<sc-м>', '"+p', { noremap = true })
+
+  vim.api.nvim_set_keymap('v', '<sc-v>', '"+p', { noremap = true })
+  vim.api.nvim_set_keymap('v', '<sc-м>', '"+p', { noremap = true })
+
+  vim.api.nvim_set_keymap('c', '<sc-v>', '<C-r>+', { noremap = true })
+  vim.api.nvim_set_keymap('c', '<sc-м>', '<C-r>+', { noremap = true })
+
+  vim.api.nvim_set_keymap('i', '<sc-v>', '<C-r>+', { noremap = true })
+  vim.api.nvim_set_keymap('i', '<sc-м>', '<C-r>+', { noremap = true })
+
+  vim.api.nvim_set_keymap('t', '<sc-v>', '<C-\\><C-n>"+pi', { noremap = true })
+  vim.api.nvim_set_keymap('t', '<sc-м>', '<C-\\><C-n>"+pi', { noremap = true })
+
+  if utils.is_mac() then
+    vim.keymap.set('v', '<D-c>', '"+y')
+    vim.keymap.set('n', '<D-v>', '"+p')
+    vim.keymap.set('v', '<D-v>', '"+p')
+    vim.keymap.set('c', '<D-v>', '<C-r>+')
+    vim.keymap.set('i', '<D-v>', '<C-r>+')
+
+    vim.keymap.set('v', '<D-с>', '"+y')
+    vim.keymap.set('n', '<D-м>', '"+p')
+    vim.keymap.set('v', '<D-м>', '"+p')
+    vim.keymap.set('c', '<D-м>', '<C-r>+')
+    vim.keymap.set('i', '<D-м>', '<C-r>+')
+  end
 
   local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
