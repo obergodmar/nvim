@@ -14,7 +14,6 @@ return {
         },
       },
       'nvim-treesitter/nvim-treesitter-textobjects',
-      'nvim-treesitter/nvim-treesitter-refactor',
     },
     config = function()
       pcall(require('nvim-treesitter.install').update({ with_sync = true }))
@@ -71,13 +70,6 @@ return {
               ['[e'] = '@conditional.outer',
             },
           },
-        },
-        refactor = {
-          highlight_definitions = {
-            enable = true,
-            clear_on_cursor_move = false,
-          },
-          highlight_current_scope = { enable = false },
         },
       })
     end,
