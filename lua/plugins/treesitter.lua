@@ -24,6 +24,7 @@ return {
         ignore_install = {},
         sync_install = true,
         ensure_installed = {
+          'gitcommit',
           'markdown',
           'markdown_inline',
           'regex',
