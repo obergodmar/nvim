@@ -1,7 +1,7 @@
 ---@type LazySpec
 local P = {
   -- A format runner for Neovim.
-  'obergodmar/formatter.nvim',
+  'mhartington/formatter.nvim',
   event = 'VeryLazy',
   keys = {
     {
