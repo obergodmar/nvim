@@ -7,7 +7,7 @@ end
 
 ---@return boolean
 function M.is_mac()
----@diagnostic disable-next-line: undefined-global
+  ---@diagnostic disable-next-line: undefined-global
   return jit.os == 'OSX'
 end
 
@@ -18,7 +18,7 @@ end
 
 ---@return string
 function M.get_shell()
-  local pwsh = 'pwsh.exe -nologo -WorkingDirectory ' .. vim.loop.cwd()
+  local pwsh = 'pwsh.exe -nologo -WorkingDirectory "' .. vim.loop.cwd() .. '"'
 
   if M.is_win() then
     return vim.fn.executable('pwsh') and pwsh or 'powershell.exe'
