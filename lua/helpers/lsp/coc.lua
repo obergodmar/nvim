@@ -71,6 +71,7 @@ M.coc = {
       'coc-html',
       'coc-eslint',
       'coc-sumneko-lua',
+      'coc-yaml',
     }
     vim.g.coc_list_preview_filetype = true
     vim.g.coc_highlight_maximum_count = 10000
@@ -157,7 +158,7 @@ M.coc = {
         { '<space>E', ':CocList extensions<cr>', desc = 'Manage extensions' },
         { '<space>sq', ':CocList commands<cr>', desc = 'Show commands' },
         { '<space>so', ':CocList outline<cr>', desc = 'Document outline' },
-        { '<space>sy', ':CocList -I symbols<cr>', desc = 'Workspace symbols' },
+        -- { '<space>sy', ':CocList -I symbols<cr>', desc = 'Workspace symbols' },
 
         { ']=', '<Plug>(coc-typos-next)', desc = 'Next misspelled word' },
         { '[=', '<Plug>(coc-typos-prev)', desc = 'Previous misspelled word' },
