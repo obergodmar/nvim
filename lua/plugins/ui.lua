@@ -135,7 +135,7 @@ return {
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = { 'lazy', 'nvim-tree', 'fzf', 'mason', 'toggleterm' },
+      extensions = { 'lazy', 'nvim-tree', 'fzf', 'mason', 'toggleterm', 'oil' },
     },
   },
   {
@@ -182,6 +182,33 @@ return {
       })
     end,
     keys = generateBufferlineKeys(),
+  },
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {
+      columns = {
+        'icon',
+        'permissions',
+        { 'size', highlight = 'Special' },
+        'mtime',
+      },
+      delete_to_trash = true,
+      watch_for_changes = true,
+    },
+    -- Optional dependencies
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
+    keys = {
+      {
+        '<leader>o',
+        '<cmd>Oil<CR>',
+        id = 'oil_open',
+        desc = 'Open [O]il file manager',
+      },
+    },
   },
   {
     'nvim-tree/nvim-tree.lua',
