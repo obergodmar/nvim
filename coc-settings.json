@@ -32,6 +32,8 @@
   "javascript.referencesCodeLens.showOnAllFunctions": false,
   "javascript.implementationsCodeLens.enabled": false,
 
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
   "typescript.referencesCodeLens.enabled": true,
   "typescript.referencesCodeLens.showOnAllFunctions": false,
   "typescript.implementationsCodeLens.enabled": false,
