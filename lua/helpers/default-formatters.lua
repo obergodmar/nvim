@@ -61,6 +61,12 @@ return {
       nix = {
         require('formatter.filetypes.nix').nixfmt,
       },
+      c = {
+        require('formatter.filetypes.c').clangformat,
+      },
+      cpp = {
+        require('formatter.filetypes.cpp').clangformat,
+      },
     }
 
     -- sed on windows works differently and this formatter throws an error
