@@ -74,7 +74,7 @@ return {
         icons_enabled = true,
         component_separators = '|',
         section_separators = '',
-        theme = 'catppuccin',
+        theme = 'catppuccin-nvim',
       },
       sections = {
         lualine_a = { win_num, 'filesize', 'mode' },

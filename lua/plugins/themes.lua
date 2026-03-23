@@ -30,6 +30,15 @@ return {
               background = true,
             },
           },
+          all = function(colors)
+            ---@type CtpIntegrationLualineOverride
+            return {
+              normal = {
+                a = { bg = colors.lavender, gui = 'italic' },
+                b = { fg = colors.lavender },
+              },
+            }
+          end,
         },
         highlight_overrides = {
           all = function(colors)
