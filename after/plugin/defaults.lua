@@ -88,3 +88,18 @@ opt.foldmethod = 'expr'
 opt.foldtext = ''
 
 opt.sessionoptions = 'blank,buffers,curdir,tabpages,winsize,winpos'
+
+if vim.env.SSH_CONNECTION then
+  vim.g.clipboard = {
+    name = 'lemonade',
+    copy = {
+      ['+'] = 'lemonade copy',
+      ['*'] = 'lemonade copy',
+    },
+    paste = {
+      ['+'] = 'lemonade paste',
+      ['*'] = 'lemonade paste',
+    },
+    cache_enabled = 0,
+  }
+end
