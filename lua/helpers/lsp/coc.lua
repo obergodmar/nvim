@@ -190,7 +190,6 @@ M.coc = {
         -- { '<S-TAB>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], expr = true, desc = 'Autocomplete/Previous' },
         { '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', expr = true, desc = 'Confirm autocomplete' },
         { '<C-z>', 'coc#refresh()', expr = true, desc = 'Refresh Coc' },
-        { '<C-j>', '<Plug>(coc-snippets-expand-jump)', desc = 'Jump in snippet' },
       },
 
       -- SCROLLING in float windows
