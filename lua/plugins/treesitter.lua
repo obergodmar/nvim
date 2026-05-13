@@ -1,10 +1,15 @@
 return {
   ---@type LazySpec
   {
-    -- Nvim Treesitter configurations and abstraction layer
     'nvim-treesitter/nvim-treesitter',
-    tag = 'v0.10.0',
+    branch = 'main',
+    lazy = false,
+    build = ':TSUpdate',
     dependencies = {
+      {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        branch = 'main',
+      },
       {
         'nvim-treesitter/nvim-treesitter-context',
         opts = {
@@ -13,66 +18,45 @@ return {
           mode = 'topline',
         },
       },
-      'nvim-treesitter/nvim-treesitter-textobjects',
     },
+
     config = function()
-      pcall(require('nvim-treesitter.install').update({ with_sync = true }))
-
-      require('nvim-treesitter.configs').setup({
-        additional_vim_regex_highlighting = false,
-        modules = {},
-        ignore_install = {},
-        sync_install = true,
-        ensure_installed = {
-          'gitcommit',
-          'markdown',
-          'markdown_inline',
-          'regex',
-          'lua',
-          'vim',
-          'bash',
-          'comment',
-        },
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-        textobjects = {
-          lsp_interop = {
-            enable = false,
-          },
-          move = {
-            enable = true,
-            set_jumps = true, -- whether to set jumps in the jumplist
-            goto_next_start = {
-              [']m'] = '@function.outer',
-              [']]'] = { query = '@class.outer', desc = 'Next class start' },
-
-              [']o'] = '@loop.*',
-
-              [']s'] = { query = '@scope', query_group = 'locals', desc = 'Next scope' },
-              [']z'] = { query = '@fold', query_group = 'folds', desc = 'Next fold' },
-            },
-            goto_next_end = {
-              [']M'] = '@function.outer',
-              [']['] = '@class.outer',
-            },
-            goto_previous_start = {
-              ['[m'] = '@function.outer',
-              ['[['] = '@class.outer',
-            },
-            goto_previous_end = {
-              ['[M'] = '@function.outer',
-              ['[]'] = '@class.outer',
-            },
-            goto_next = {
-              [']e'] = '@conditional.outer',
-            },
-            goto_previous = {
-              ['[e'] = '@conditional.outer',
-            },
-          },
-        },
+      require('nvim-treesitter').setup({})
+      require('nvim-treesitter').install({
+        'gitcommit',
+        'markdown',
+        'markdown_inline',
+        'regex',
+        'lua',
+        'vim',
+        'bash',
+        'comment',
       })
+
+      local ts_move = require('nvim-treesitter-textobjects.move')
+      vim.keymap.set({ 'n', 'x', 'o' }, ']f', function()
+        ts_move.goto_next('@function.outer', 'textobjects')
+      end, { desc = 'Next function boundary' })
+      vim.keymap.set({ 'n', 'x', 'o' }, '[f', function()
+        ts_move.goto_previous('@function.outer', 'textobjects')
+      end, { desc = 'Previous function boundary' })
+      vim.keymap.set({ 'n', 'x', 'o' }, ']F', function()
+        ts_move.goto_next_start('@function.outer', 'textobjects')
+      end, { desc = 'Next function start' })
+      vim.keymap.set({ 'n', 'x', 'o' }, '[F', function()
+        ts_move.goto_previous_start('@function.outer', 'textobjects')
+      end, { desc = 'Previous function start' })
+      vim.keymap.set({ 'n', 'x', 'o' }, ']p', function()
+        ts_move.goto_next_start('@parameter.inner', 'textobjects')
+      end, { desc = 'Next parameter' })
+      vim.keymap.set({ 'n', 'x', 'o' }, '[p', function()
+        ts_move.goto_previous_start('@parameter.inner', 'textobjects')
+      end, { desc = 'Previous parameter' })
+
+      -- Repeat moves with ;,
+      local ts_repeat_move = require('nvim-treesitter-textobjects.repeatable_move')
+      vim.keymap.set({ 'n', 'x', 'o' }, ';', ts_repeat_move.repeat_last_move)
+      vim.keymap.set({ 'n', 'x', 'o' }, ',', ts_repeat_move.repeat_last_move_opposite)
     end,
   },
 }

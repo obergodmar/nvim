@@ -87,6 +87,8 @@ opt.foldexpr = "v:lua.require'helpers.utils'.foldexpr()"
 opt.foldmethod = 'expr'
 opt.foldtext = ''
 
+vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
 opt.sessionoptions = 'blank,buffers,curdir,tabpages,winsize,winpos'
 
 if vim.env.SSH_CONNECTION then
