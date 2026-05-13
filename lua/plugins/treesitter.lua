@@ -1,28 +1,11 @@
 return {
   ---@type LazySpec
   {
-    -- Nvim Treesitter configurations and abstraction layer
-    'nvim-treesitter/nvim-treesitter',
-    tag = 'v0.10.0',
-    dependencies = {
-      {
-        'nvim-treesitter/nvim-treesitter-context',
-        opts = {
-          multiwindow = true,
-          multiline_threshold = 1,
-          mode = 'topline',
-        },
-      },
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
+    --- A lightweight Tree-sitter parser manager for Neovim.
+    'romus204/tree-sitter-manager.nvim',
+    dependencies = {},
     config = function()
-      pcall(require('nvim-treesitter.install').update({ with_sync = true }))
-
-      require('nvim-treesitter.configs').setup({
-        additional_vim_regex_highlighting = false,
-        modules = {},
-        ignore_install = {},
-        sync_install = true,
+      require('tree-sitter-manager').setup({
         ensure_installed = {
           'gitcommit',
           'markdown',
@@ -32,46 +15,10 @@ return {
           'vim',
           'bash',
           'comment',
-        },
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-        textobjects = {
-          lsp_interop = {
-            enable = false,
-          },
-          move = {
-            enable = true,
-            set_jumps = true, -- whether to set jumps in the jumplist
-            goto_next_start = {
-              [']m'] = '@function.outer',
-              [']]'] = { query = '@class.outer', desc = 'Next class start' },
-
-              [']o'] = '@loop.*',
-
-              [']s'] = { query = '@scope', query_group = 'locals', desc = 'Next scope' },
-              [']z'] = { query = '@fold', query_group = 'folds', desc = 'Next fold' },
-            },
-            goto_next_end = {
-              [']M'] = '@function.outer',
-              [']['] = '@class.outer',
-            },
-            goto_previous_start = {
-              ['[m'] = '@function.outer',
-              ['[['] = '@class.outer',
-            },
-            goto_previous_end = {
-              ['[M'] = '@function.outer',
-              ['[]'] = '@class.outer',
-            },
-            goto_next = {
-              [']e'] = '@conditional.outer',
-            },
-            goto_previous = {
-              ['[e'] = '@conditional.outer',
-            },
-          },
-        },
+          'nix',
+        }, -- list of parsers to install at the start of a neovim session
+        auto_install = true, -- if enabled, install missing parsers when editing a new file
+        highlight = true, -- treesitter highlighting is enabled by default
       })
     end,
   },
