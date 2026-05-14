@@ -59,6 +59,8 @@ return {
               ['CocSemTypeModMethodReadonly'] = { fg = colors.blue },
               ['CocSemTypeModMethod'] = { fg = colors.blue },
 
+              ['CocSemTypeModEnumMemberReadonly'] = { fg = colors.teal },
+
               ['CocSemTypeModParameter'] = { fg = colors.red },
 
               ['@tag.builtin.tsx'] = { fg = colors.blue },
