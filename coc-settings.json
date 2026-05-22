@@ -123,5 +123,16 @@
   "suggest.languageSourcePriority": 99,
   "coc.source.file.priority": 2,
   "coc.source.around.priority": 3,
-  "coc.source.buffer.priority": 4
+  "coc.source.buffer.priority": 4,
+
+  "languageserver": {
+    "nix": {
+      "command": "nil",
+      "filetypes": ["nix"],
+      "rootPatterns": ["flake.nix"],
+      "settings": {
+        "nil": {}
+      }
+    }
+  }
 }
