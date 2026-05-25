@@ -9,6 +9,10 @@ return {
   ---@module "auto-session"
   ---@type AutoSession.Config
   opts = {
+    auto_restore_last_session = true,
+    single_session_mode = true,
+    args_allow_single_directory = false,
+    bypass_save_filetypes = { 'oil' },
     pre_save_cmds = {
       function()
         -- list current buffers
@@ -28,7 +32,7 @@ return {
         end
       end,
     },
-    cwd_change_handling = true,
+    cwd_change_handling = false,
     -- log_level = 'debug',
   },
 }
