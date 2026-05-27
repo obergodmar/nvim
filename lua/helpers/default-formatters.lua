@@ -67,6 +67,9 @@ return {
       cpp = {
         require('formatter.filetypes.cpp').clangformat,
       },
+      python = {
+        require('formatter.filetypes.python').ruff,
+      },
     }
 
     -- sed on windows works differently and this formatter throws an error
