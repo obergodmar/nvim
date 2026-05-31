@@ -84,7 +84,6 @@ map({ 'n', 'v' }, '<M-P>', '"0P', { silent = true })
 map({ 'n', 'v' }, '<M-з>', '"0p', { silent = true })
 map({ 'n', 'v' }, '<M-З>', '"0P', { silent = true })
 
-
 ---@return string|string[]|nil
 local function get_last_search()
   local last_search = vim.fn.getreg('/')

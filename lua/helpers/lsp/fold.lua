@@ -65,7 +65,7 @@ M.add_ufo_folding = function(hoverFn)
                 },
               },
               {
-                text = { builtin.lnumfunc, " " },
+                text = { builtin.lnumfunc, ' ' },
               },
               {
                 sign = {
