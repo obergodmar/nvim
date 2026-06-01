@@ -21,6 +21,8 @@
   "semanticTokens.combinedModifiers": ["readonly", "declaration", "local"],
   "semanticTokens.incrementTypes": ["variable"],
 
+  "snippets.ultisnips.pythonPrompt": false,
+
   "codeLens.enable": false,
   "codeLens.position": "eol",
 
