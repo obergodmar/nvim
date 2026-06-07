@@ -130,12 +130,32 @@
   "coc.source.buffer.priority": 4,
 
   "languageserver": {
-    "nix": {
+    "nil": {
       "command": "nil",
       "filetypes": ["nix"],
       "rootPatterns": ["flake.nix"],
       "settings": {
         "nil": {}
+      }
+    },
+    "nixd": {
+      "command": "nixd",
+      "filetypes": ["nix"],
+      "rootPatterns": ["flake.nix", ".git"],
+      "settings": {
+        "nixd": {
+          "nixpkgs": {
+            "expr": "import <nixpkgs> { }"
+          },
+          "options": {
+            "nixos": {
+              "expr": "let host = builtins.getEnv \"HOSTNAME\"; flake = builtins.getFlake (builtins.toString ./.); in flake.nixosConfigurations.${host}.options"
+            },
+            "home-manager": {
+              "expr": "let host = builtins.getEnv \"HOSTNAME\"; flake = builtins.getFlake (builtins.toString ./.); in flake.homeConfigurations.${host}.options"
+            }
+          }
+        }
       }
     }
   }
