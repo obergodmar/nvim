@@ -1,5 +1,5 @@
 return {
-  { 'tpope/vim-fugitive', event = 'VeryLazy' },
+  { 'obergodmar/vim-fugitive', event = 'VeryLazy' },
   {
     'isakbm/gitgraph.nvim',
     dependencies = {
