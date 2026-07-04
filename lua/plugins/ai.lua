@@ -65,6 +65,7 @@ return {
   {
     'zbirenbaum/copilot.lua',
     lazy = true,
+    event = 'InsertEnter',
     dependencies = {
       {
         'copilotlsp-nvim/copilot-lsp',
@@ -73,23 +74,26 @@ return {
         end,
       },
     },
-    init = function()
-      vim.keymap.set('n', '<leader>C', toggle_copilot, { desc = 'Toggle Copilot' })
-      vim.keymap.set('n', '<leader>С', toggle_copilot, { desc = 'Toggle Copilot' })
-    end,
+    keys = {
+      { '<leader>C', toggle_copilot, desc = 'Toggle Copilot' },
+    },
     opts = {
       filetypes = copilot_filetypes,
       panel = {
         enabled = false,
       },
       nes = {
-        enabled = false,
+        enabled = true,
         auto_trigger = true,
         keymap = {
           accept_and_goto = '<C-x>',
           accept = false,
           dismiss = '<C-c>',
         },
+      },
+      server = {
+        type = 'binary',
+        custom_server_filepath = 'copilot-language-server',
       },
       suggestion = {
         enabled = true,
@@ -108,6 +112,7 @@ return {
       telemetry = {
         telemetryLevel = 'off',
       },
+      copilot_node_command = 'node',
     },
     config = function(_, opts)
       vim.g.copilot_no_tab_map = true
