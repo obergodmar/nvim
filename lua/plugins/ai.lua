@@ -64,6 +64,7 @@ end
 return {
   {
     'zbirenbaum/copilot.lua',
+    enabled = false,
     lazy = true,
     event = 'InsertEnter',
     dependencies = {
