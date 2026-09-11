@@ -145,7 +145,7 @@ return {
     event = 'BufEnter',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      local macchiato = require('catppuccin.palettes').get_palette('macchiato')
+      local palette = require('catppuccin.palettes').get_palette(require('helpers.catppuccin').flavor())
 
       require('bufferline').setup({
         ---@type bufferline.Options
@@ -175,7 +175,7 @@ return {
         highlights = require('catppuccin.special.bufferline').get_theme({
           custom = {
             all = {
-              fill = { bg = macchiato.mantle },
+              fill = { bg = palette.mantle },
             },
           },
         }),

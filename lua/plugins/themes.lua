@@ -89,7 +89,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme('catppuccin-macchiato')
+      vim.cmd.colorscheme('catppuccin-' .. require('helpers.catppuccin').flavor())
     end,
   },
   {

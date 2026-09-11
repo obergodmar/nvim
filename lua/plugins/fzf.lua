@@ -36,6 +36,7 @@ local P = {
   event = 'VeryLazy',
   opts = {
     'fzf-native',
+    fzf_colors = true,
     winopts = {
       fullscreen = false,
       border = 'rounded',
