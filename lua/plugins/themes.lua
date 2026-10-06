@@ -7,7 +7,16 @@ return {
     config = function()
       require('catppuccin').setup({
         term_colors = true,
+        auto_integrations = false,
         integrations = {
+          fzf = true,
+          gitsigns = true,
+          indent_blankline = { enabled = true },
+          markdown = true,
+          nvimtree = true,
+          telescope = true,
+          treesitter_context = true,
+          ufo = true,
           coc_nvim = true,
           fidget = true,
           native_lsp = {

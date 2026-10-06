@@ -287,6 +287,9 @@ return {
           'node_modules',
         },
       },
+      experimental = {
+        session_restore_nvim = false,
+      },
     },
     keys = {
       {

@@ -4,7 +4,10 @@ return {
     'nvim-treesitter/nvim-treesitter',
     branch = 'main',
     lazy = false,
-    build = ':TSUpdate',
+    build = function()
+      local updated = require('nvim-treesitter').update('all', { summary = true }):wait(300000)
+      assert(updated, 'Treesitter parser update failed')
+    end,
     dependencies = {
       {
         'nvim-treesitter/nvim-treesitter-textobjects',

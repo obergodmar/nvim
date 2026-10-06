@@ -60,6 +60,14 @@ at baseline. Do not write candidates into the repository lockfile yet. The
 manager may insert itself into the resolved spec; account for its trusted copy
 explicitly even when it is absent from the original lockfile.
 
+This configuration bootstraps the manager outside the plugin root. lazy.nvim
+classifies such a directory as local, skips its normal Git maintenance, and omits
+it from its lock writer. Review the manager through a separate minimal setup
+whose root contains its checkout, using a temporary lockfile. Apply a reviewed
+manager revision through that setup when needed; preserve the repository's other
+lock entries and record the exact manager SHA in the report. Do not assume adding
+an entry to `lazy-lock.json` makes the bootstrap revision reproducible.
+
 ## Frozen application
 
 After review and fork publication, create a candidate lockfile with accepted
@@ -76,6 +84,12 @@ loading mixed old/new revisions before migrations and builds finish. Carry
 reviewed build hooks explicitly; inspect the manager's behavior for hooks needing
 runtime loading (such as `:TSUpdate`). Do not claim `restore` is execution-free.
 Only start the migrated full config once live HEADs match the manifest.
+
+Use complete repository/URL selectors when adding build-hook overrides; a table
+containing only `name` and `build` is not a valid spec in the inspected version.
+Inspect setup diagnostics as well as task failures. Verify ignored/generated
+artifacts separately from Git HEADs, and explicitly call native `lazy.build`
+when restore did not run a required hook or a stale bundle remains.
 
 Resolve all placeholder paths/variables for the target host before running any
 commands. Enforce the same manifest through staging, live installation, lockfile

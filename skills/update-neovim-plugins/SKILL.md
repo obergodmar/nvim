@@ -120,6 +120,10 @@ and their transitive package downloads before this step. Never run unrestricted
 `Lazy sync` or floating `update` after review; upstream can move in the meantime.
 
 Stage builds and runtime checks in isolated data/state/cache/config directories.
+For CoC, explicitly set `vim.g.coc_data_home` to a private copy of extension data
+and `vim.g.coc_config_home` to the temporary configuration. `COC_DATA_HOME` alone
+is ignored outside CoC's test mode. Disable extension and language-server update
+checks in the test configuration to prevent unreviewed downloads.
 Include plugin-provided package specs and new dependencies in the review; do not
 let package discovery install unchecked code. Preserve real build behavior.
 In particular, review the CoC hook `npm ci & npm run build`: shell `&` backgrounds
@@ -139,6 +143,9 @@ task errors and logs even if the process exits zero.
   paths), not an unrelated `~/.config/nvim`. Capture headless startup messages/logs;
   exercise events, filetypes, commands, and key-triggered loads, including the
   conditional paths applicable on this host.
+  Schedule runtime assertions after the actual `VimEnter` event; startup `-c`
+  commands run before it and can leave CoC waiting for initialization. Keep the
+  normal runtime-path ordering so site parsers take precedence over legacy copies.
 - Run `:checkhealth`, save its buffer to the run report, and inspect errors and
   warnings. Compare with a baseline captured under the same environment. Health
   checks may load code; run them only after reviewing the revisions they execute.
