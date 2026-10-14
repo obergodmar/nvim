@@ -1,16 +1,12 @@
 local keys = require('helpers.search-keys')
 
 local get_project_root = function()
-  local cmd
-
-  if require('helpers.utils').is_win() then
-    cmd = 'git rev-parse --show-toplevel 2> nul || echo %CD%'
-  else
-    cmd = vim.fn.systemlist('git rev-parse --show-toplevel 2> /dev/null || echo "$PWD"')[1]
+  local root = vim.fn.systemlist({ 'git', 'rev-parse', '--show-toplevel' })[1]
+  if vim.v.shell_error == 0 and root and root ~= '' then
+    return root
   end
 
-  local cwd = vim.fn.systemlist(cmd)[1]
-  return cwd
+  return vim.fn.getcwd()
 end
 
 local build_fd_file_search_cmd = function()
@@ -18,11 +14,11 @@ local build_fd_file_search_cmd = function()
 
   if require('helpers.utils').is_win() then
     cmd = 'fd --absolute-path . '
-      .. get_project_root()
+      .. vim.fn.shellescape(get_project_root())
       .. ' --color=never --type f --hidden --follow --exclude .git 2> nul'
   else
     cmd = 'fd --absolute-path . '
-      .. get_project_root()
+      .. vim.fn.shellescape(get_project_root())
       .. ' --color=never --type f --hidden --follow --exclude .git 2> /dev/null'
   end
 
