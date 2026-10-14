@@ -10,16 +10,13 @@ local get_project_root = function()
 end
 
 local build_fd_file_search_cmd = function()
+  local root = vim.fn.shellescape(get_project_root())
   local cmd
 
   if require('helpers.utils').is_win() then
-    cmd = 'fd --absolute-path . '
-      .. vim.fn.shellescape(get_project_root())
-      .. ' --color=never --type f --hidden --follow --exclude .git 2> nul'
+    cmd = 'fd --absolute-path . ' .. root .. ' --color=never --type f --hidden --follow --exclude .git 2> nul'
   else
-    cmd = 'fd --absolute-path . '
-      .. vim.fn.shellescape(get_project_root())
-      .. ' --color=never --type f --hidden --follow --exclude .git 2> /dev/null'
+    cmd = 'fd --absolute-path . ' .. root .. ' --color=never --type f --hidden --follow --exclude .git 2> /dev/null'
   end
 
   return cmd
