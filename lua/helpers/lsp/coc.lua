@@ -67,6 +67,7 @@ M.coc = {
       'coc-cspell-dicts',
 
       'coc-tsserver',
+      '@obergodmar/coc-svelte-language-tools',
       'coc-css',
       'coc-html',
       'coc-eslint',
