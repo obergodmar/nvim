@@ -25,23 +25,18 @@ local prettier_config_files = {
 }
 
 local oxfmt_config_files = {
-  '.oxfmt.conf',
-  '.oxfmtrc',
   '.oxfmtrc.json',
   '.oxfmtrc.jsonc',
-  'oxfmt.json',
   'oxfmt.config.ts',
-  'vite.config.ts',
-  'vite.config.js',
 }
 
 local function web_formatters(bufnr)
-  if root_config.exists(oxfmt_config_files, { bufnr = bufnr }) then
-    return { 'oxfmt' }
-  end
+  local prettier_config = root_config.find_nearest(prettier_config_files, { bufnr = bufnr })
+  local oxfmt_config = root_config.find_nearest(oxfmt_config_files, { bufnr = bufnr })
 
-  if root_config.exists(prettier_config_files, { bufnr = bufnr }) then
-    return { 'prettier' }
+  -- Prefer the closest config; oxfmt wins when both are in the same directory.
+  if oxfmt_config and (not prettier_config or #vim.fs.dirname(oxfmt_config) >= #vim.fs.dirname(prettier_config)) then
+    return { 'oxfmt' }
   end
 
   return { 'prettier' }
