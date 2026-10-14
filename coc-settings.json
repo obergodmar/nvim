@@ -158,5 +158,12 @@
         }
       }
     }
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://www.schemastore.org": true,
+    "https://json.schemastore.org": true,
+    "https://raw.githubusercontent.com": true,
+    "https://turborepo.com": true,
+    "https://inlang.com": true
   }
 }
