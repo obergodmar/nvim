@@ -70,7 +70,7 @@ M.coc = {
       'coc-css',
       'coc-html',
       'coc-eslint',
-      'coc-sumneko-lua',
+      'coc-luals',
       'coc-yaml',
     }
     vim.g.coc_list_preview_filetype = true
