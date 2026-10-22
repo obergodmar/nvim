@@ -26,6 +26,9 @@ local P = {
     conform.setup({
       log_level = vim.log.levels.WARN,
       formatters_by_ft = require('helpers.formatters').get_formatters_by_ft(),
+      formatters = {
+        vite_plus = require('helpers.vite-plus-formatter'),
+      },
       default_format_opts = {
         timeout_ms = 3000,
         lsp_format = 'never',

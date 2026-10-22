@@ -31,6 +31,11 @@ local oxfmt_config_files = {
 }
 
 local function web_formatters(bufnr)
+  local root = root_config.project_root({ bufnr = bufnr })
+  if vim.uv.fs_stat(root .. '/node_modules/vite-plus/package.json') then
+    return { 'vite_plus' }
+  end
+
   local prettier_config = root_config.find_nearest(prettier_config_files, { bufnr = bufnr })
   local oxfmt_config = root_config.find_nearest(oxfmt_config_files, { bufnr = bufnr })
 
