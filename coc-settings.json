@@ -6,13 +6,12 @@
   "Lua.codeLens.enable": true,
   "Lua.workspace.checkThirdParty": "Disable",
 
-  // Instead use CocCommand sumneko-lua.install
-  "sumneko-lua.prompt": false,
-  "sumneko-lua.enableNvimLuaDev": true,
-  "sumneko-lua.logPath": "~/.cache/nvim/lua-ls.log",
+  // Use the system LuaLS wrapper, including its writable cache paths.
+  "Lua.misc.executablePath": "lua-language-server",
+  "luals.checkUpdate": false,
+  "luals.nvimLua.enable": true,
+  "luals.nvimLua.library": ["lazy.nvim"],
   "Lua.runtime.version": "LuaJIT",
-  "Lua.misc.parameters": ["--metapath=~/.cache/nvim/lua-ls-meta"],
-  "Lua.workspace.library": ["~/.local/share/nvim/lazy/lazy.nvim/lua"],
 
   "tsserver.useLocalTsdk": true,
   "tsserver.maxTsServerMemory": 4096,
