@@ -2,7 +2,7 @@ local utils = require('helpers.utils')
 
 if utils.is_neovide() then
   if utils.is_mac() then
-    vim.o.guifont = 'Iosevka Nerd Font:h13.5'
+    vim.o.guifont = 'Iosevka Nerd Font:b:h13.5'
     vim.g.neovide_input_macos_option_key_is_meta = 'both'
   else
     vim.o.guifont = 'Iosevka Nerd Font:b:h12'
