@@ -4,6 +4,7 @@
   "cSpell.showStatus": false,
 
   "Lua.codeLens.enable": true,
+  "Lua.format.enable": false,
   "Lua.workspace.checkThirdParty": "Disable",
 
   // Use the system LuaLS wrapper, including its writable cache paths.
@@ -62,6 +63,11 @@
 
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "eslint.run": "onType",
+
+  "oxc.oxlint.enable": true,
+  "oxc.oxlint.run": "onType",
+  "oxc.oxfmt.enable": true,
+  "oxc.oxfmt.formatterPriority": 1,
 
   "css.validate": false,
 

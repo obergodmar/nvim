@@ -71,6 +71,7 @@ M.coc = {
       'coc-css',
       'coc-html',
       'coc-eslint',
+      'coc-oxc',
       'coc-luals',
       'coc-yaml',
     }
