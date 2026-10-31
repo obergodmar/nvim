@@ -136,32 +136,12 @@
 
   "languageserver": {
     "nil": {
-      "command": "nil",
-      "filetypes": ["nix"],
-      "rootPatterns": ["flake.nix"],
-      "settings": {
-        "nil": {}
-      }
+      "enable": false
     },
     "nixd": {
       "command": "nixd",
       "filetypes": ["nix"],
-      "rootPatterns": ["flake.nix", ".git"],
-      "settings": {
-        "nixd": {
-          "nixpkgs": {
-            "expr": "import <nixpkgs> { }"
-          },
-          "options": {
-            "nixos": {
-              "expr": "let host = builtins.getEnv \"HOSTNAME\"; flake = builtins.getFlake (builtins.toString ./.); in flake.nixosConfigurations.${host}.options"
-            },
-            "home-manager": {
-              "expr": "let host = builtins.getEnv \"HOSTNAME\"; flake = builtins.getFlake (builtins.toString ./.); in flake.homeConfigurations.${host}.options"
-            }
-          }
-        }
-      }
+      "rootPatterns": ["flake.nix", "devenv.nix", "shell.nix", ".git"]
     }
   },
   "json.schemaDownload.trustedDomains": {
