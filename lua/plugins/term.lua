@@ -16,9 +16,9 @@ local P = {
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     shade_terminals = false,
-    start_in_insert = true,
     open_mapping = [[<c-\>]],
     shell = require('helpers.utils').get_shell(),
+    direction = 'tab',
   },
   config = function(_, opts)
     require('toggleterm').setup(opts)
